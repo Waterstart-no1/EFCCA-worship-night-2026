@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>主領培訓計劃 · 敬拜之夜 2026 · EFCCA</title>
+<meta name="description" content="2026 敬拜之夜 · 主領培訓計劃 · 9 週裝備">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0c1024;
+    --bg-darker: #06091a;
+    --gold: #d4af6a;
+    --gold-bright: #ecd29a;
+    --gold-dim: #7a6539;
+    --cream: #ede1c9;
+    --cream-muted: #b8ad97;
+    --slate: #7c8499;
+    --slate-dim: #4d5468;
+    --border: rgba(212, 175, 106, 0.18);
+    --border-soft: rgba(212, 175, 106, 0.08);
+    --serif-en: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif;
+    --serif-cn: 'Noto Serif SC', 'Cormorant Garamond', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--serif-cn);
+    color: var(--cream);
+    background: var(--bg-deep);
+    min-height: 100vh;
+    line-height: 1.65;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse at 15% 10%, rgba(212, 175, 106, 0.10) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 85%, rgba(110, 130, 180, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(212, 175, 106, 0.03) 0%, transparent 70%),
+      linear-gradient(180deg, #0c1024 0%, #080b1c 50%, #06091a 100%);
+    background-attachment: fixed;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 28% 42%, rgba(212,175,106,0.45), transparent),
+      radial-gradient(1px 1px at 47% 11%, rgba(255,255,255,0.35), transparent),
+      radial-gradient(1.5px 1.5px at 62% 67%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 78% 33%, rgba(212,175,106,0.4), transparent),
+      radial-gradient(1px 1px at 88% 78%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 8% 88%, rgba(212,175,106,0.4), transparent),
+      radial-gradient(1px 1px at 38% 92%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 95% 12%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 55% 25%, rgba(212,175,106,0.3), transparent),
+      radial-gradient(1px 1px at 22% 70%, rgba(255,255,255,0.35), transparent),
+      radial-gradient(1.2px 1.2px at 70% 50%, rgba(255,255,255,0.4), transparent);
+    background-size: 100% 100%;
+    animation: twinkle 6s ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 60px 28px 100px;
+  }
+
+  /* TOP NAV (back link) */
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px;
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .top-nav-brand {
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.55em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    padding-left: 0.55em;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    transition: gap 0.3s;
+  }
+
+  .back-link:hover { gap: 16px; }
+
+  .back-link svg {
+    width: 16px;
+    height: 10px;
+    stroke: currentColor;
+    stroke-width: 1.2;
+    fill: none;
+  }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 50px 0 70px;
+    animation: fadeIn 1.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-flourish {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 26px;
+    color: var(--gold);
+  }
+
+  .hero-flourish-line {
+    width: 70px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), var(--gold), var(--gold-dim), transparent);
+  }
+
+  .hero-flourish-mark {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    opacity: 0.7;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--serif-en);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.7em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: inline-block;
+    padding-left: 0.7em;
+  }
+
+  .hero-title {
+    font-family: var(--serif-cn);
+    font-size: clamp(40px, 8vw, 78px);
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    color: var(--cream);
+    margin-bottom: 22px;
+    text-shadow: 0 0 60px rgba(212, 175, 106, 0.18);
+    padding-left: 0.18em;
+  }
+
+  .hero-subtitle {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: clamp(18px, 2.4vw, 24px);
+    font-weight: 300;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    padding-left: 0.32em;
+  }
+
+  .hero-tag {
+    margin-top: 36px;
+    font-family: var(--serif-cn);
+    font-size: 14px;
+    color: var(--cream-muted);
+    letter-spacing: 0.18em;
+  }
+
+  /* INFO BAND */
+  .info-band {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 0 auto 80px;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 30px 0;
+    animation: fadeIn 1s ease-out 0.3s backwards;
+  }
+
+  .info-cell {
+    text-align: center;
+    padding: 0 18px;
+    border-right: 1px solid var(--border-soft);
+  }
+
+  .info-cell:last-child { border-right: none; }
+
+  .info-label {
+    font-family: var(--serif-en);
+    font-size: 10px;
+    letter-spacing: 0.45em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-left: 0.45em;
+  }
+
+  .info-value {
+    font-family: var(--serif-cn);
+    font-size: 15px;
+    color: var(--cream);
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+  }
+
+  .info-value-en {
+    display: block;
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 11px;
+    color: var(--slate);
+    margin-top: 4px;
+    letter-spacing: 0.08em;
+  }
+
+  /* SECTIONS */
+  .section {
+    margin-bottom: 80px;
+    animation: fadeIn 1s ease-out backwards;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+
+  .section-eyebrow {
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.6em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-left: 0.6em;
+  }
+
+  .section-title {
+    font-family: var(--serif-cn);
+    font-size: clamp(26px, 4.5vw, 36px);
+    font-weight: 300;
+    letter-spacing: 0.28em;
+    color: var(--cream);
+    padding-left: 0.28em;
+  }
+
+  .section-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .section-divider-line {
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+  }
+
+  .section-divider-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px var(--gold);
+  }
+
+  /* TABLES */
+  .table-wrap {
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  thead th {
+    background: rgba(212, 175, 106, 0.06);
+    font-family: var(--serif-en);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  tbody td {
+    padding: 14px 16px;
+    color: var(--cream);
+    border-bottom: 1px solid var(--border-soft);
+    letter-spacing: 0.06em;
+    vertical-align: top;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  tbody tr:hover { background: rgba(212, 175, 106, 0.03); }
+
+  td.num {
+    font-family: var(--serif-en);
+    color: var(--gold);
+    width: 60px;
+    letter-spacing: 0.15em;
+  }
+
+  td.muted { color: var(--cream-muted); }
+
+  .row-highlight td {
+    background: rgba(212, 175, 106, 0.05);
+  }
+
+  .row-highlight td.num,
+  .row-highlight td:nth-child(2) { color: var(--gold-bright); }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--serif-en);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+    color: var(--gold);
+    margin-left: 8px;
+  }
+
+  /* AGENDA BLOCK */
+  .agenda {
+    border: 1px solid var(--border);
+    padding: 32px 32px 24px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+    position: relative;
+  }
+
+  .agenda + .agenda { margin-top: 24px; }
+
+  .agenda-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-top: 1px solid var(--gold);
+    border-left: 1px solid var(--gold);
+    opacity: 0.45;
+  }
+  .agenda-corner.tl { top: 12px; left: 12px; }
+  .agenda-corner.br {
+    bottom: 12px; right: 12px;
+    border-top: none; border-left: none;
+    border-bottom: 1px solid var(--gold);
+    border-right: 1px solid var(--gold);
+  }
+
+  .agenda-eyebrow {
+    font-family: var(--serif-en);
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding-left: 0.5em;
+  }
+
+  .agenda-title {
+    font-family: var(--serif-cn);
+    font-size: 20px;
+    color: var(--cream);
+    letter-spacing: 0.16em;
+    margin-bottom: 22px;
+    padding-left: 0.16em;
+  }
+
+  .agenda-row {
+    display: grid;
+    grid-template-columns: 160px 90px 1fr auto;
+    gap: 18px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-soft);
+    align-items: baseline;
+  }
+
+  .agenda-row:last-child { border-bottom: none; }
+
+  .agenda-time {
+    font-family: var(--serif-en);
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+
+  .agenda-dur {
+    font-family: var(--serif-en);
+    color: var(--cream-muted);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    font-style: italic;
+  }
+
+  .agenda-content {
+    font-size: 14px;
+    color: var(--cream);
+    letter-spacing: 0.05em;
+  }
+
+  .agenda-owner {
+    font-size: 12px;
+    color: var(--slate);
+    letter-spacing: 0.1em;
+    text-align: right;
+  }
+
+  /* CALLOUT */
+  .callout {
+    margin-top: 24px;
+    padding: 18px 22px;
+    border-left: 2px solid var(--gold);
+    background: rgba(212, 175, 106, 0.04);
+    color: var(--cream-muted);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    line-height: 1.8;
+  }
+
+  .callout strong { color: var(--cream); font-weight: 500; }
+
+  /* PREP LIST */
+  .prep-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .prep-list li {
+    position: relative;
+    padding: 10px 0 10px 28px;
+    color: var(--cream);
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .prep-list li:last-child { border-bottom: none; }
+
+  .prep-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: var(--gold);
+    font-size: 10px;
+    opacity: 0.7;
+  }
+
+  .prep-list a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); }
+  .prep-list a:hover { color: var(--gold-bright); }
+
+  /* FOOTER */
+  .page-footer {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 50px;
+    border-top: 1px solid var(--border-soft);
+    color: var(--slate);
+  }
+
+  .footer-mark {
+    font-family: var(--serif-en);
+    font-size: 12px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-left: 0.5em;
+    color: var(--gold);
+  }
+
+  .footer-stats {
+    font-family: var(--serif-en);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: var(--slate-dim);
+    font-style: italic;
+  }
+
+  .footer-stats-cn {
+    display: block;
+    font-family: var(--serif-cn);
+    font-style: normal;
+    font-size: 11px;
+    color: var(--slate-dim);
+    margin-top: 6px;
+    letter-spacing: 0.3em;
+  }
+
+  ::selection { background: var(--gold); color: var(--bg-deep); }
+
+  /* RESPONSIVE */
+  @media (max-width: 760px) {
+    .container { padding: 36px 18px 70px; }
+    .hero { padding: 26px 0 50px; }
+    .info-band {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 18px 0;
+      margin-bottom: 56px;
+    }
+    .info-cell {
+      border-right: none;
+      padding: 16px 8px;
+    }
+    .info-cell:nth-child(odd) { border-right: 1px solid var(--border-soft); }
+    .info-cell:nth-child(-n+2) { border-bottom: 1px solid var(--border-soft); }
+
+    table { font-size: 13px; }
+    thead th, tbody td { padding: 12px 12px; }
+
+    .agenda { padding: 24px 18px 16px; }
+    .agenda-row {
+      grid-template-columns: 1fr;
+      gap: 4px;
+      padding: 12px 0;
+    }
+    .agenda-owner { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- TOP NAV -->
+  <div class="top-nav">
+    <div class="top-nav-brand">EFCCA · 敬拜之夜 2026</div>
+    <a class="back-link" href="index.html">
+      <svg viewBox="0 0 16 10"><path d="M15 5 L2 5 M6 1 L2 5 L6 9"/></svg>
+      返回 · Home
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-flourish">
+      <div class="hero-flourish-line"></div>
+      <span class="hero-flourish-mark">✦</span>
+      <div class="hero-flourish-line"></div>
+    </div>
+    <div class="hero-eyebrow">Worship Leader Training</div>
+    <h1 class="hero-title">主領培訓計劃</h1>
+    <div class="hero-subtitle">Nine Sundays · One Calling</div>
+    <div class="hero-tag">以 2026 敬拜之夜詩歌為操練素材 · 提升主領的音樂能力</div>
+  </header>
+
+  <!-- INFO BAND -->
+  <div class="info-band">
+    <div class="info-cell">
+      <div class="info-label">Span</div>
+      <div class="info-value">
+        5/10 — 7/5
+        <span class="info-value-en">9 Sundays</span>
+      </div>
+    </div>
+    <div class="info-cell">
+      <div class="info-label">Time</div>
+      <div class="info-value">
+        11:30 – 12:30
+        <span class="info-value-en">60 min · post-service</span>
+      </div>
+    </div>
+    <div class="info-cell">
+      <div class="info-label">Trainers</div>
+      <div class="info-value">
+        鍾文鼎 · 廖宜謙
+        <span class="info-value-en">Co-Trainers</span>
+      </div>
+    </div>
+    <div class="info-cell">
+      <div class="info-label">Next</div>
+      <div class="info-value">
+        7/12 起
+        <span class="info-value-en">Band Rehearsals</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9-WEEK SCHEDULE -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">I · Schedule</div>
+      <h2 class="section-title">9 週日期一覽</h2>
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <div class="section-divider-dot"></div>
+        <div class="section-divider-line"></div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Date</th>
+            <th>Theme</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-highlight">
+            <td class="num">1</td>
+            <td>5 月 10 日<span class="badge">和會後 12:30</span></td>
+            <td>開訓(牧師短講)+ 第一首指導 · 教會預備簡餐</td>
+          </tr>
+          <tr>
+            <td class="num">2</td>
+            <td>5 月 17 日</td>
+            <td class="muted">第二首指導</td>
+          </tr>
+          <tr>
+            <td class="num">3</td>
+            <td>5 月 24 日</td>
+            <td class="muted">第三首指導</td>
+          </tr>
+          <tr>
+            <td class="num">4</td>
+            <td>5 月 31 日</td>
+            <td class="muted">第四首指導</td>
+          </tr>
+          <tr>
+            <td class="num">5</td>
+            <td>6 月 7 日</td>
+            <td class="muted">第五首指導</td>
+          </tr>
+          <tr>
+            <td class="num">6</td>
+            <td>6 月 14 日</td>
+            <td class="muted">第六首指導</td>
+          </tr>
+          <tr>
+            <td class="num">7</td>
+            <td>6 月 21 日</td>
+            <td class="muted">第七首指導</td>
+          </tr>
+          <tr>
+            <td class="num">8</td>
+            <td>6 月 28 日</td>
+            <td class="muted">第八首指導</td>
+          </tr>
+          <tr class="row-highlight">
+            <td class="num">9</td>
+            <td>7 月 5 日</td>
+            <td>第九首指導 + 收尾</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SONGS / LEADERS -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">II · Assignments</div>
+      <h2 class="section-title">9 首待指導詩歌</h2>
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <div class="section-divider-dot"></div>
+        <div class="section-divider-line"></div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>Leader</th>
+            <th>Song</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">早 1</td>
+            <td>邵斌 弟兄</td>
+            <td>得勝的宣告</td>
+          </tr>
+          <tr>
+            <td class="num">早 2</td>
+            <td>EVA 老師</td>
+            <td>無始無終</td>
+          </tr>
+          <tr>
+            <td class="num">早 2</td>
+            <td>Clara</td>
+            <td>Sing Hallelujah to the Lord</td>
+          </tr>
+          <tr>
+            <td class="num">早 3</td>
+            <td>楊炎山 · 邵娟</td>
+            <td>耶穌祢已得勝</td>
+          </tr>
+          <tr>
+            <td class="num">早 4</td>
+            <td>潘濤</td>
+            <td>兩首皆可,擇一<span class="badge">待定</span></td>
+          </tr>
+          <tr>
+            <td class="num">晚 1</td>
+            <td>Frances</td>
+            <td>差遣我</td>
+          </tr>
+          <tr>
+            <td class="num">晚 2</td>
+            <td>李廣斌</td>
+            <td>我們呼求</td>
+          </tr>
+          <tr>
+            <td class="num">晚 3</td>
+            <td>Allen 弟兄</td>
+            <td>祢是配得</td>
+          </tr>
+          <tr>
+            <td class="num">晚 4</td>
+            <td>吳佳陽</td>
+            <td>前來敬拜祢</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <strong>⚠ 早 4 待定:</strong>指導〈十架的呼喚〉還是〈讓我愛而不受感戴〉,需與潘濤確認。
+    </div>
+  </section>
+
+  <!-- AGENDA: SESSION 1 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">III · Agenda</div>
+      <h2 class="section-title">議程</h2>
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <div class="section-divider-dot"></div>
+        <div class="section-divider-line"></div>
+      </div>
+    </div>
+
+    <div class="agenda">
+      <span class="agenda-corner tl"></span>
+      <span class="agenda-corner br"></span>
+      <div class="agenda-eyebrow">Session 1 · 5 / 10 · Opening · After 和會</div>
+      <div class="agenda-title">第 1 次 — 開訓(和會後)</div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">12:30 – 12:45</div>
+        <div class="agenda-dur">15 min</div>
+        <div class="agenda-content">牧師短講(僅本次)</div>
+        <div class="agenda-owner">牧師</div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-time">12:45 – 12:55</div>
+        <div class="agenda-dur">10 min</div>
+        <div class="agenda-content">培訓內容概述</div>
+        <div class="agenda-owner">鍾文鼎 · 廖宜謙</div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-time">12:55 – 13:30</div>
+        <div class="agenda-dur">35 min</div>
+        <div class="agenda-content">第一首詩歌現場指導</div>
+        <div class="agenda-owner">主領 + 小天使</div>
+      </div>
+
+      <div class="callout" style="margin-top: 22px;">
+        <strong>⏰ 時間異動:</strong>因首日和會,第 1 次培訓延至和會後舉行(12:30 – 13:30)。<strong>教會預備簡餐</strong>。
+      </div>
+    </div>
+
+    <div class="agenda">
+      <span class="agenda-corner tl"></span>
+      <span class="agenda-corner br"></span>
+      <div class="agenda-eyebrow">Sessions 2 – 9 · Standard Format</div>
+      <div class="agenda-title">第 2 — 9 次 — 常規議程</div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">11:30 – 11:40</div>
+        <div class="agenda-dur">10 min</div>
+        <div class="agenda-content">培訓內容概述 / 上週復盤 / 本次重點</div>
+        <div class="agenda-owner">培訓師</div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-time">11:40 – 12:30</div>
+        <div class="agenda-dur">50 min</div>
+        <div class="agenda-content">該週詩歌現場指導(主領預先預備)</div>
+        <div class="agenda-owner">主領 + 小天使</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREP -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">IV · Preparation</div>
+      <h2 class="section-title">主領預備事項</h2>
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <div class="section-divider-dot"></div>
+        <div class="section-divider-line"></div>
+      </div>
+    </div>
+
+    <ul class="prep-list">
+      <li>培訓前需熟悉自己組的詩歌(旋律、歌詞、調性)</li>
+      <li>若可邀請小天使(伴唱)同來,效果更佳</li>
+      <li>詩歌參考連結見 <a href="songs.html">2026 敬拜之夜詩歌頁面</a></li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-mark">✦ Soli Deo Gloria ✦</div>
+    <div class="footer-stats">
+      EFCCA Worship Leader Training · MMXXVI
+      <span class="footer-stats-cn">恩慈台福基督教會 · 主領培訓 · 2026</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
