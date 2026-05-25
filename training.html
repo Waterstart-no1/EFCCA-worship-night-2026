@@ -372,6 +372,20 @@
     margin-left: 8px;
   }
 
+  .badge.done { color: #8fc09b; border-color: rgba(143, 192, 155, 0.4); }
+  .badge.skip { color: #c49a8a; border-color: rgba(196, 154, 138, 0.4); }
+  .badge.plan { color: var(--gold); border-color: rgba(212, 175, 106, 0.45); }
+  .badge.tbd  { color: var(--slate); border-color: var(--border-soft); }
+
+  .lead {
+    color: var(--cream-muted);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    margin-left: 6px;
+  }
+
+  .strike { text-decoration: line-through; color: var(--slate); }
+
   /* AGENDA BLOCK */
   .agenda {
     border: 1px solid var(--border);
@@ -648,50 +662,50 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="row-highlight">
+          <tr>
             <td class="num">1</td>
             <td>5 月 10 日<span class="badge">和會後 12:30</span></td>
-            <td>開訓(牧師短講)+ 第一首指導 · 教會預備簡餐</td>
+            <td>開訓 · 得勝的宣告<span class="lead">— 邵斌</span><span class="badge done">Done</span></td>
           </tr>
           <tr>
             <td class="num">2</td>
             <td>5 月 17 日</td>
-            <td class="muted">第二首指導</td>
+            <td class="muted"><span class="strike">第二首指導</span> · 因故順延<span class="badge skip">Skipped</span></td>
           </tr>
           <tr>
             <td class="num">3</td>
             <td>5 月 24 日</td>
-            <td class="muted">第三首指導</td>
+            <td>讓我愛而不受感戴<span class="lead">— 潘濤</span><span class="badge done">Done</span></td>
           </tr>
           <tr>
             <td class="num">4</td>
             <td>5 月 31 日</td>
-            <td class="muted">第四首指導</td>
+            <td>耶穌祢已得勝<span class="lead">— 楊炎山 + 邵娟</span><span class="badge plan">Planned</span></td>
           </tr>
           <tr>
             <td class="num">5</td>
             <td>6 月 7 日</td>
-            <td class="muted">第五首指導</td>
+            <td class="muted">待定<span class="badge tbd">TBD</span></td>
           </tr>
           <tr>
             <td class="num">6</td>
             <td>6 月 14 日</td>
-            <td class="muted">第六首指導</td>
+            <td class="muted">待定<span class="badge tbd">TBD</span></td>
           </tr>
           <tr>
             <td class="num">7</td>
             <td>6 月 21 日</td>
-            <td class="muted">第七首指導</td>
+            <td class="muted">待定<span class="badge tbd">TBD</span></td>
           </tr>
           <tr>
             <td class="num">8</td>
             <td>6 月 28 日</td>
-            <td class="muted">第八首指導</td>
+            <td>Sing Hallelujah to the Lord<span class="lead">— Clara</span> &nbsp;/&nbsp; 無始無終<span class="lead">— EVA</span><span class="badge plan">Planned</span></td>
           </tr>
-          <tr class="row-highlight">
+          <tr>
             <td class="num">9</td>
             <td>7 月 5 日</td>
-            <td>第九首指導 + 收尾</td>
+            <td class="muted">收尾<span class="badge tbd">TBD</span></td>
           </tr>
         </tbody>
       </table>
