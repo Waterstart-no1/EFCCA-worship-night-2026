@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>主領培訓計劃 · 敬拜之夜 2026 · EFCCA</title>
-<meta name="description" content="2026 敬拜之夜 · 主領培訓計劃 · 9 週裝備">
+<meta name="description" content="2026 敬拜之夜 · 主領培訓計劃 · 10 期裝備">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -91,11 +91,13 @@
     padding: 60px 28px 100px;
   }
 
-  /* TOP NAV (back link) */
+  /* TOP NAV */
   .top-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 14px 28px;
     margin-bottom: 36px;
     animation: fadeIn 0.8s ease-out;
   }
@@ -107,29 +109,38 @@
     color: var(--gold-dim);
     text-transform: uppercase;
     padding-left: 0.55em;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .top-nav-brand:hover { color: var(--gold); }
+
+  .top-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
   }
 
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+  .top-nav-links a {
     font-family: var(--serif-en);
     font-size: 11px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
+    color: var(--cream-muted);
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .top-nav-links a:hover { color: var(--gold-bright); }
+  .top-nav-links a.current {
     color: var(--gold);
-    transition: gap 0.3s;
+    border-bottom-color: var(--gold);
   }
 
-  .back-link:hover { gap: 16px; }
-
-  .back-link svg {
-    width: 16px;
-    height: 10px;
-    stroke: currentColor;
-    stroke-width: 1.2;
-    fill: none;
+  @media (max-width: 600px) {
+    .top-nav { gap: 8px 16px; }
+    .top-nav-links { gap: 14px; }
+    .top-nav-links a { font-size: 10px; letter-spacing: 0.22em; }
   }
 
   /* HERO */
@@ -515,6 +526,113 @@
   .prep-list a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); }
   .prep-list a:hover { color: var(--gold-bright); }
 
+  /* RESOURCE CARD */
+  .resource-card {
+    position: relative;
+    display: block;
+    padding: 36px 36px 28px;
+    text-decoration: none;
+    color: inherit;
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+    border: 1px solid var(--border);
+    transition: all 0.45s cubic-bezier(0.2, 0.8, 0.3, 1);
+    overflow: hidden;
+  }
+
+  .resource-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(212,175,106,0.10), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .resource-card:hover {
+    border-color: rgba(212, 175, 106, 0.45);
+    transform: translateY(-3px);
+  }
+
+  .resource-card:hover::before { opacity: 1; }
+
+  .resource-corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-top: 1px solid var(--gold);
+    border-left: 1px solid var(--gold);
+    opacity: 0.45;
+    top: 14px; left: 14px;
+  }
+
+  .resource-corner.br {
+    top: auto; left: auto;
+    bottom: 14px; right: 14px;
+    border-top: none; border-left: none;
+    border-bottom: 1px solid var(--gold);
+    border-right: 1px solid var(--gold);
+  }
+
+  .resource-eyebrow {
+    font-family: var(--serif-en);
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-left: 0.5em;
+  }
+
+  .resource-title {
+    font-family: var(--serif-cn);
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    color: var(--cream);
+    margin-bottom: 6px;
+    padding-left: 0.22em;
+  }
+
+  .resource-en {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .resource-desc {
+    font-size: 14px;
+    color: var(--cream-muted);
+    line-height: 1.85;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+  }
+
+  .resource-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    transition: gap 0.3s;
+  }
+
+  .resource-card:hover .resource-arrow { gap: 16px; }
+
+  .resource-arrow svg {
+    width: 16px;
+    height: 10px;
+    stroke: currentColor;
+    stroke-width: 1.2;
+    fill: none;
+  }
+
   /* FOOTER */
   .page-footer {
     text-align: center;
@@ -588,11 +706,13 @@
 
   <!-- TOP NAV -->
   <div class="top-nav">
-    <div class="top-nav-brand">EFCCA · 敬拜之夜 2026</div>
-    <a class="back-link" href="index.html">
-      <svg viewBox="0 0 16 10"><path d="M15 5 L2 5 M6 1 L2 5 L6 9"/></svg>
-      返回 · Home
-    </a>
+    <a class="top-nav-brand" href="index.html">EFCCA · 敬拜之夜 2026</a>
+    <nav class="top-nav-links">
+      <a href="index.html">首頁</a>
+      <a href="program.html">程序</a>
+      <a href="songs.html">詩歌</a>
+      <a href="training.html" class="current">培訓</a>
+    </nav>
   </div>
 
   <!-- HERO -->
@@ -613,8 +733,8 @@
     <div class="info-cell">
       <div class="info-label">Span</div>
       <div class="info-value">
-        5/10 — 7/5
-        <span class="info-value-en">9 Sundays</span>
+        5/10 — 7/12
+        <span class="info-value-en">10 Sundays</span>
       </div>
     </div>
     <div class="info-cell">
@@ -634,17 +754,17 @@
     <div class="info-cell">
       <div class="info-label">Next</div>
       <div class="info-value">
-        7/12 起
+        7/19 起
         <span class="info-value-en">Band Rehearsals</span>
       </div>
     </div>
   </div>
 
-  <!-- 9-WEEK SCHEDULE -->
+  <!-- SCHEDULE -->
   <section class="section">
     <div class="section-header">
       <div class="section-eyebrow">I · Schedule</div>
-      <h2 class="section-title">9 週日期一覽</h2>
+      <h2 class="section-title">10 期日期一覽</h2>
       <div class="section-divider">
         <div class="section-divider-line"></div>
         <div class="section-divider-dot"></div>
@@ -705,7 +825,12 @@
           <tr>
             <td class="num">9</td>
             <td>7 月 5 日</td>
-            <td class="muted">收尾<span class="badge tbd">TBD</span></td>
+            <td>前來敬拜祢<span class="lead">— 吳佳陽 · 晚 4</span><span class="badge plan">Planned</span></td>
+          </tr>
+          <tr>
+            <td class="num">10</td>
+            <td>7 月 12 日</td>
+            <td>得勝的宣告<span class="lead">— 邵斌 · 早 1 · 再練習</span><span class="badge plan">Planned</span></td>
           </tr>
         </tbody>
       </table>
@@ -834,7 +959,7 @@
       <span class="agenda-corner tl"></span>
       <span class="agenda-corner br"></span>
       <div class="agenda-eyebrow">Sessions 2 – 9 · Standard Format</div>
-      <div class="agenda-title">第 2 — 9 次 — 常規議程</div>
+      <div class="agenda-title">第 2 — 10 次 — 常規議程</div>
 
       <div class="agenda-row">
         <div class="agenda-time">11:30 – 11:40</div>
@@ -868,6 +993,33 @@
       <li>若可邀請小天使(伴唱)同來,效果更佳</li>
       <li>詩歌參考連結見 <a href="songs.html">2026 敬拜之夜詩歌頁面</a></li>
     </ul>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">V · Resources</div>
+      <h2 class="section-title">延伸閱讀</h2>
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <div class="section-divider-dot"></div>
+        <div class="section-divider-line"></div>
+      </div>
+    </div>
+
+    <a class="resource-card" href="vocal-anatomy.html">
+      <span class="resource-corner"></span><span class="resource-corner br"></span>
+      <div class="resource-eyebrow">Vocal Anatomy · 發聲教程</div>
+      <div class="resource-title">聲音的構造</div>
+      <div class="resource-en">The Anatomy of Voice</div>
+      <p class="resource-desc">
+        從解剖學理解發聲原理。動力、振動、共鳴三段式入門,附四種常見錯誤辨識與三句話帶團隊收尾。
+      </p>
+      <span class="resource-arrow">
+        閱讀 · Read
+        <svg viewBox="0 0 16 10"><path d="M1 5 L14 5 M10 1 L14 5 L10 9"/></svg>
+      </span>
+    </a>
   </section>
 
   <!-- FOOTER -->

@@ -542,10 +542,73 @@
     background: var(--gold);
     color: var(--bg-deep);
   }
+
+  /* TOP NAV */
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    margin-bottom: 24px;
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .top-nav-brand {
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.55em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    padding-left: 0.55em;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .top-nav-brand:hover { color: var(--gold); }
+
+  .top-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+  }
+
+  .top-nav-links a {
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .top-nav-links a:hover { color: var(--gold-bright); }
+  .top-nav-links a.current {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  @media (max-width: 600px) {
+    .top-nav { gap: 8px 16px; }
+    .top-nav-links { gap: 14px; }
+    .top-nav-links a { font-size: 10px; letter-spacing: 0.22em; }
+  }
 </style>
 </head>
 <body>
 <div class="container">
+
+  <!-- TOP NAV -->
+  <div class="top-nav">
+    <a class="top-nav-brand" href="index.html">EFCCA · 敬拜之夜 2026</a>
+    <nav class="top-nav-links">
+      <a href="index.html" class="current">首頁</a>
+      <a href="program.html">程序</a>
+      <a href="songs.html">詩歌</a>
+      <a href="training.html">培訓</a>
+    </nav>
+  </div>
 
   <!-- CHURCH MARK -->
   <div class="church-mark">

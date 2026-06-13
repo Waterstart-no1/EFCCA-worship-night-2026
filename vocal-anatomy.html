@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聲音的構造 · 敬拜團隊培訓 · 敬拜之夜 2026 · EFCCA</title>
+<meta name="description" content="2026 敬拜之夜 · 主領培訓 · 從解剖學理解發聲原理">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0c1024;
+    --bg-darker: #06091a;
+    --gold: #d4af6a;
+    --gold-bright: #ecd29a;
+    --gold-dim: #7a6539;
+    --cream: #ede1c9;
+    --cream-muted: #b8ad97;
+    --slate: #7c8499;
+    --slate-dim: #4d5468;
+    --border: rgba(212, 175, 106, 0.18);
+    --border-soft: rgba(212, 175, 106, 0.08);
+    --serif-en: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif;
+    --serif-cn: 'Noto Serif SC', 'Cormorant Garamond', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--serif-cn);
+    color: var(--cream);
+    background: var(--bg-deep);
+    min-height: 100vh;
+    line-height: 1.85;
+    letter-spacing: 0.02em;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse at 15% 10%, rgba(212, 175, 106, 0.10) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 85%, rgba(110, 130, 180, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(212, 175, 106, 0.03) 0%, transparent 70%),
+      linear-gradient(180deg, #0c1024 0%, #080b1c 50%, #06091a 100%);
+    background-attachment: fixed;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 28% 42%, rgba(212,175,106,0.45), transparent),
+      radial-gradient(1px 1px at 47% 11%, rgba(255,255,255,0.35), transparent),
+      radial-gradient(1.5px 1.5px at 62% 67%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 78% 33%, rgba(212,175,106,0.4), transparent),
+      radial-gradient(1px 1px at 88% 78%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 8% 88%, rgba(212,175,106,0.4), transparent),
+      radial-gradient(1px 1px at 38% 92%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 95% 12%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 55% 25%, rgba(212,175,106,0.3), transparent),
+      radial-gradient(1px 1px at 22% 70%, rgba(255,255,255,0.35), transparent),
+      radial-gradient(1.2px 1.2px at 70% 50%, rgba(255,255,255,0.4), transparent);
+    background-size: 100% 100%;
+    animation: twinkle 6s ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* === LAYOUT === */
+  .page {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 80px;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* TOP NAV */
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 36px 28px 0;
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .top-nav-brand {
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.55em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    padding-left: 0.55em;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .top-nav-brand:hover { color: var(--gold); }
+
+  .top-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+  }
+
+  .top-nav-links a {
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .top-nav-links a:hover { color: var(--gold-bright); }
+  .top-nav-links a.current {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  @media (max-width: 600px) {
+    .top-nav { gap: 8px 16px; padding: 22px 18px 0; }
+    .top-nav-links { gap: 14px; }
+    .top-nav-links a { font-size: 10px; letter-spacing: 0.22em; }
+  }
+
+  /* === HEADER === */
+  header.hero {
+    text-align: center;
+    padding: 80px 28px 50px;
+    max-width: 820px;
+    margin: 0 auto;
+    animation: fadeIn 1.2s ease-out;
+  }
+
+  .eyebrow {
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.55em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    font-weight: 400;
+  }
+
+  .eyebrow span {
+    display: inline-block;
+    margin: 0 0.6rem;
+    color: var(--gold-dim);
+  }
+
+  h1.title {
+    font-family: var(--serif-cn);
+    font-size: clamp(40px, 8vw, 72px);
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 14px;
+    letter-spacing: 0.18em;
+    padding-left: 0.18em;
+    text-shadow: 0 0 60px rgba(212, 175, 106, 0.18);
+  }
+
+  .subtitle-en {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: clamp(18px, 2.4vw, 24px);
+    color: var(--gold);
+    font-weight: 300;
+    letter-spacing: 0.32em;
+    margin-bottom: 44px;
+    padding-left: 0.32em;
+  }
+
+  .scripture {
+    font-family: var(--serif-en);
+    font-style: italic;
+    color: var(--cream-muted);
+    font-size: 15px;
+    line-height: 1.85;
+    max-width: 540px;
+    margin: 0 auto 8px;
+    letter-spacing: 0.06em;
+  }
+
+  .scripture-zh {
+    font-family: var(--serif-cn);
+    font-style: normal;
+    color: var(--slate);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    margin-top: 4px;
+  }
+
+  /* === ORNAMENT === */
+  .ornament {
+    text-align: center;
+    color: var(--gold-dim);
+    font-size: 12px;
+    letter-spacing: 0.9em;
+    margin: 56px 0;
+    padding-right: 0.9em;
+  }
+
+  .ornament.spaced { margin: 78px 0; }
+
+  /* === ANATOMY FIGURE === */
+  .figure-section {
+    max-width: 980px;
+    margin: 2rem auto 70px;
+    padding: 0 28px;
+    animation: fadeIn 1s ease-out 0.2s backwards;
+  }
+
+  .figure-frame {
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+    border: 1px solid var(--border);
+    padding: 32px 26px 24px;
+    position: relative;
+  }
+
+  .figure-frame::before, .figure-frame::after {
+    content: "✦";
+    position: absolute;
+    color: var(--gold);
+    font-size: 13px;
+    background: var(--bg-deep);
+    padding: 0 10px;
+  }
+
+  .figure-frame::before { top: -10px; left: 50%; transform: translateX(-50%); }
+  .figure-frame::after  { bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+  .figure-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.95) contrast(1.05);
+  }
+
+  .figure-caption {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--slate);
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    line-height: 1.7;
+  }
+
+  .figure-caption strong {
+    color: var(--gold);
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.4em;
+    padding-left: 0.4em;
+  }
+
+  /* === INTRO === */
+  .intro {
+    max-width: 680px;
+    margin: 0 auto 50px;
+    padding: 0 28px;
+    font-size: 16px;
+    color: var(--cream);
+    line-height: 2;
+  }
+
+  .intro p { margin-bottom: 18px; }
+
+  .intro .lead {
+    text-align: center;
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--gold);
+    margin-bottom: 36px;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+  }
+
+  .intro .flow {
+    text-align: center;
+    color: var(--gold);
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 18px;
+    letter-spacing: 0.18em;
+    margin: 26px 0;
+  }
+
+  .term {
+    color: var(--gold-bright);
+    border-bottom: 1px dotted var(--gold-dim);
+    padding-bottom: 1px;
+  }
+
+  /* === CHAPTER === */
+  .chapter {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 70px 28px 40px;
+    animation: fadeIn 1s ease-out backwards;
+  }
+
+  .chapter-head {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .chapter-num {
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.55em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    padding-left: 0.55em;
+  }
+
+  .chapter-title-zh {
+    font-family: var(--serif-cn);
+    font-size: clamp(28px, 4.5vw, 38px);
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    color: var(--cream);
+    margin-bottom: 10px;
+    padding-left: 0.4em;
+  }
+
+  .chapter-title-en {
+    font-family: var(--serif-en);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    margin-bottom: 24px;
+  }
+
+  .chapter-rule {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: 18px auto 24px;
+  }
+  .chapter-rule::before, .chapter-rule::after {
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+  }
+  .chapter-rule::after { background: linear-gradient(90deg, transparent, var(--gold-dim), transparent); }
+  .chapter-rule {
+    position: relative;
+  }
+  .chapter-rule::before { /* keep symmetry */ }
+
+  /* chapter divider with center dot */
+  .chapter-head .chapter-rule {
+    height: 14px;
+  }
+  .chapter-head .chapter-rule::before,
+  .chapter-head .chapter-rule::after {
+    flex: none;
+  }
+
+  .chapter-head .chapter-rule {
+    background:
+      radial-gradient(circle, var(--gold) 0 2px, transparent 2.5px) center / 4px 4px no-repeat;
+  }
+
+  .chapter-verse {
+    font-family: var(--serif-en);
+    font-style: italic;
+    color: var(--cream-muted);
+    font-size: 14px;
+    line-height: 1.85;
+    max-width: 520px;
+    margin: 0 auto;
+    letter-spacing: 0.06em;
+  }
+
+  .ref {
+    display: block;
+    font-family: var(--serif-en);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    margin-top: 12px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  .chapter-body {
+    font-size: 15.5px;
+    color: var(--cream);
+    line-height: 2;
+  }
+
+  .chapter-body p {
+    margin-bottom: 18px;
+  }
+
+  .chapter-body em {
+    color: var(--gold-bright);
+    font-style: italic;
+  }
+
+  .chapter-body p:first-of-type::first-letter {
+    font-family: var(--serif-en);
+    font-size: 3.2rem;
+    float: left;
+    line-height: 0.9;
+    margin: 6px 12px 0 0;
+    color: var(--gold);
+  }
+
+  .pullquote {
+    text-align: center;
+    margin: 36px auto;
+    padding: 22px 24px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--cream-muted);
+    letter-spacing: 0.08em;
+    max-width: 560px;
+  }
+
+  .pullquote-zh {
+    display: inline-block;
+    font-family: var(--serif-cn);
+    font-style: normal;
+    font-size: 17px;
+    color: var(--gold-bright);
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+  }
+
+  /* === DIAGNOSIS === */
+  .diagnosis {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 70px 28px 40px;
+    animation: fadeIn 1s ease-out backwards;
+  }
+
+  .diagnosis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 28px;
+  }
+
+  .diagnosis-card {
+    padding: 28px 26px 22px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+    border: 1px solid var(--border);
+    position: relative;
+  }
+
+  .diagnosis-card::before,
+  .diagnosis-card::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--gold);
+    opacity: 0.4;
+  }
+  .diagnosis-card::before {
+    top: 10px; left: 10px;
+    border-right: none; border-bottom: none;
+  }
+  .diagnosis-card::after {
+    bottom: 10px; right: 10px;
+    border-left: none; border-top: none;
+  }
+
+  .diagnosis-card h3 {
+    font-family: var(--serif-cn);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--cream);
+    letter-spacing: 0.18em;
+    margin-bottom: 6px;
+    padding-left: 0.18em;
+  }
+
+  .diagnosis-card .symptom {
+    font-family: var(--serif-en);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    margin-bottom: 14px;
+  }
+
+  .diagnosis-card p {
+    font-size: 14px;
+    color: var(--cream-muted);
+    line-height: 1.85;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+  }
+
+  .diagnosis-card .root {
+    font-size: 13px;
+    color: var(--slate);
+    padding-top: 10px;
+    border-top: 1px solid var(--border-soft);
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .diagnosis-card .root strong {
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    margin-right: 6px;
+  }
+
+  /* === CODA === */
+  .coda {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 70px 28px 40px;
+    text-align: center;
+    animation: fadeIn 1s ease-out backwards;
+  }
+
+  .coda-list {
+    list-style: none;
+    margin: 36px 0;
+  }
+
+  .coda-list li {
+    position: relative;
+    padding: 18px 0 18px 60px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-soft);
+    font-family: var(--serif-cn);
+    font-size: 17px;
+    color: var(--cream);
+    letter-spacing: 0.14em;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .coda-list li:last-child { border-bottom: none; }
+
+  .coda-list li::before {
+    content: attr(data-num);
+    position: absolute;
+    left: 0;
+    top: 18px;
+    font-family: var(--serif-en);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    width: 50px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+    line-height: 1;
+    padding-right: 12px;
+  }
+
+  /* === FOOTER === */
+  footer.page-footer {
+    margin-top: 80px;
+    padding: 60px 28px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-soft);
+    color: var(--slate);
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-mark {
+    font-family: var(--serif-en);
+    font-size: 12px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    padding-left: 0.5em;
+    color: var(--gold);
+  }
+
+  .footer-stats {
+    font-family: var(--serif-en);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: var(--slate-dim);
+    font-style: italic;
+  }
+
+  .footer-stats-cn {
+    display: block;
+    font-family: var(--serif-cn);
+    font-style: normal;
+    font-size: 11px;
+    color: var(--slate-dim);
+    margin-top: 6px;
+    letter-spacing: 0.3em;
+  }
+
+  .footer-back {
+    display: inline-block;
+    margin-top: 26px;
+    color: var(--gold);
+    text-decoration: none;
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-back:hover {
+    color: var(--gold-bright);
+    border-bottom-color: var(--gold);
+  }
+
+  ::selection { background: var(--gold); color: var(--bg-deep); }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 760px) {
+    .top-nav { padding: 22px 18px 0; }
+    header.hero { padding: 50px 20px 36px; }
+    .eyebrow { letter-spacing: 0.3em; font-size: 10px; }
+    .figure-section { padding: 0 16px; margin-bottom: 48px; }
+    .figure-frame { padding: 22px 14px 18px; }
+    .intro { padding: 0 20px; font-size: 15px; }
+    .chapter { padding: 48px 20px 24px; }
+    .chapter-body { font-size: 15px; }
+    .chapter-body p:first-of-type::first-letter { font-size: 2.6rem; }
+    .pullquote { font-size: 15px; padding: 18px 16px; }
+    .pullquote-zh { font-size: 15px; }
+    .ornament, .ornament.spaced { margin: 40px 0; letter-spacing: 0.7em; }
+    .diagnosis { padding: 48px 18px 24px; }
+    .diagnosis-grid { grid-template-columns: 1fr; }
+    .diagnosis-card { padding: 22px 18px 18px; }
+    .coda { padding: 48px 20px 24px; }
+    .coda-list li { padding-left: 50px; font-size: 16px; }
+    .coda-list li::before { width: 40px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- TOP NAV -->
+  <div class="top-nav">
+    <a class="top-nav-brand" href="index.html">EFCCA · 敬拜之夜 2026</a>
+    <nav class="top-nav-links">
+      <a href="index.html">首頁</a>
+      <a href="program.html">程序</a>
+      <a href="songs.html">詩歌</a>
+      <a href="training.html" class="current">培訓</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="eyebrow">EFCCA<span>·</span>恩慈台福<span>·</span>敬拜團隊培訓</div>
+    <h1 class="title">聲音的構造</h1>
+    <div class="subtitle-en">The Anatomy of Voice</div>
+    <p class="scripture">
+      <em>"Let everything that hath breath praise the Lord."</em>
+    </p>
+    <p class="scripture scripture-zh">
+      凡有氣息的,都要讚美耶和華 · 詩篇 150:6
+    </p>
+  </header>
+
+  <div class="ornament">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+  <!-- ANATOMY FIGURE -->
+  <section class="figure-section">
+    <div class="figure-frame">
+      <img src="assets/anatomy.jpg" alt="發聲器官解剖圖:喉的側面觀、上面觀、喉部結構">
+    </div>
+    <p class="figure-caption">
+      <strong>FIGURA · 圖譜</strong><br>
+      喉的側面觀 &nbsp;·&nbsp; 喉的上面觀 &nbsp;·&nbsp; 喉部結構
+    </p>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <p class="lead">
+      發聲看似神秘,<br>其實只是這幾個結構在協調工作。
+    </p>
+    <p>
+      讓我們順著一股氣流的旅程,從圖中由下而上認識它的路徑——
+    </p>
+    <p class="flow">
+      氣管 &nbsp;→&nbsp; 聲帶 &nbsp;→&nbsp; 喉咽 &nbsp;→&nbsp; 口咽 &nbsp;→&nbsp; 鼻咽 &nbsp;→&nbsp; 嘴
+    </p>
+    <p>
+      它要經過三個區域,每個區域做一件事:<span class="term">運輸氣流</span>、<span class="term">產生振動</span>、<span class="term">塑造音色</span>。記住這三段,就掌握了發聲的全部骨架,剩下的都是細節。
+    </p>
+  </section>
+
+  <div class="ornament spaced">✦ &nbsp; · &nbsp; ✦ &nbsp; · &nbsp; ✦</div>
+
+  <!-- CHAPTER I -->
+  <section class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num">PARS · I</div>
+      <h2 class="chapter-title-zh">動 力</h2>
+      <div class="chapter-title-en">The Source &nbsp;·&nbsp; 氣從哪裡來</div>
+      <div class="chapter-rule"></div>
+      <p class="chapter-verse">
+        <em>"The Spirit of God hath made me, and the breath of the Almighty hath given me life."</em>
+        <span class="ref">JOB 33:4 &nbsp;·&nbsp; 約伯記</span>
+      </p>
+    </div>
+
+    <div class="chapter-body">
+      <p>
+        圖上沒有畫肺和橫膈膜,但<span class="term">氣管底下連的就是肺</span>。氣管像一根從肺通向聲帶的風琴管。
+      </p>
+      <p>
+        唱歌時,橫膈膜下降把氣吸進肺,然後橫膈膜和腹部肌肉控制著氣慢慢往上送,經過氣管沖向聲帶。
+      </p>
+      <p>
+        關鍵在於:氣管本身只是一根管子,<span class="term">它不發力</span>。真正發力的是橫膈膜和腹肌——是吸氣肌和呼氣肌的對抗。
+      </p>
+
+      <div class="pullquote">
+        <span class="pullquote-zh">力氣在小腹,不在喉嚨。</span><br>
+        <em>The power lies deep, not in the throat.</em>
+      </div>
+
+      <p>
+        如果你感覺「喉嚨這裡在用力推氣」,那就是錯的。動力源不在喉嚨,在小腹深處。喉嚨用力,只會卡住聲音的出路。
+      </p>
+    </div>
+  </section>
+
+  <div class="ornament">✦ &nbsp; · &nbsp; ✦</div>
+
+  <!-- CHAPTER II -->
+  <section class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num">PARS · II</div>
+      <h2 class="chapter-title-zh">振 動</h2>
+      <div class="chapter-title-en">The Vibration &nbsp;·&nbsp; 聲音誕生的地方</div>
+      <div class="chapter-rule"></div>
+      <p class="chapter-verse">
+        <em>"I will sing with the spirit, and I will sing with the understanding also."</em>
+        <span class="ref">I CORINTHIANS 14:15 &nbsp;·&nbsp; 哥林多前書</span>
+      </p>
+    </div>
+
+    <div class="chapter-body">
+      <p>
+        看中間那張<span class="term">「喉的上面觀」</span>——這是從嘴巴往下看進喉嚨的視角。中間兩條白色的就是<span class="term">聲帶</span>。
+      </p>
+      <p>
+        聲帶其實是兩片粘膜包裹著的肌肉,水平地橫在喉的中間。平時呼吸時它們是分開的,讓氣自由通過;說話或唱歌時它們靠攏、輕輕閉合,氣流沖過時產生振動——這就是聲音的源頭。
+      </p>
+      <p>
+        右邊那張立體圖告訴我們更多細節:
+      </p>
+      <p>
+        <span class="term">甲狀軟骨</span>(藍色那塊大的,男生喉結就是它)——聲帶就附著在它的內壁上,是聲帶的骨架。
+      </p>
+      <p>
+        <span class="term">環甲肌</span>(下面紅色那塊)——這塊肌肉一收縮,會把甲狀軟骨往前下方拉,把聲帶拉長、繃緊。<em>這就是你唱高音的物理機制。</em>
+      </p>
+      <p>
+        <span class="term">舌骨</span>(最上面那塊)——喉部懸掛在它下面,喉的上下位置主要靠它周圍的肌肉控制。
+      </p>
+
+      <div class="pullquote">
+        <span class="pullquote-zh">聲帶是被氣吹響的,<br>不是被喉嚨擠響的。</span><br>
+        <em>The cords are sung by the breath, not squeezed by the throat.</em>
+      </div>
+
+      <p>
+        唱高音不是「用力把聲音頂上去」,而是環甲肌讓聲帶變薄變緊(像吉他弦擰緊了音變高)。不知道這個原理的人,會本能地用喉嚨肌肉去擠——那是錯誤的方式。
+      </p>
+      <p>
+        還有一個小但重要的結構:<span class="term">會厭</span>。圖上標得很清楚,像一個小蓋子。吞咽時它蓋住氣管不讓食物進去,發聲時它要往上抬開、不擋路。會厭僵硬下壓,是很多人「聲音卡卡的」的隱藏原因。
+      </p>
+    </div>
+  </section>
+
+  <div class="ornament">✦ &nbsp; · &nbsp; ✦</div>
+
+  <!-- CHAPTER III -->
+  <section class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num">PARS · III</div>
+      <h2 class="chapter-title-zh">共 鳴</h2>
+      <div class="chapter-title-en">The Resonance &nbsp;·&nbsp; 音色的塑造</div>
+      <div class="chapter-rule"></div>
+      <p class="chapter-verse">
+        <em>"Make a joyful noise unto the Lord, all ye lands.<br>
+        Serve the Lord with gladness: come before his presence with singing."</em>
+        <span class="ref">PSALM 100:1–2 &nbsp;·&nbsp; 詩篇</span>
+      </p>
+    </div>
+
+    <div class="chapter-body">
+      <p>
+        回到左圖,看聲帶<span class="term">上面</span>那一長段空間——這就是<span class="term">聲道(vocal tract)</span>。它被分成三段:
+      </p>
+      <p>
+        <span class="term">喉咽</span>——聲帶正上方的空間。<br>
+        <span class="term">口咽</span>——舌頭後面的空間,是最大的共鳴腔。<br>
+        <span class="term">鼻咽</span>——軟齶後上方通向鼻腔的空間。
+      </p>
+      <p>
+        聲帶產生的原始聲音其實很單薄、像蜂鳴器一樣。它必須經過這整段管子,才能變成你聽到的豐滿人聲。這段管子的<em>形狀</em>決定了一切音色。
+      </p>
+      <p>
+        <span class="term">口咽是最關鍵的共鳴腔。</span>看圖上舌頭占了多大的位置——舌頭一動,口咽的形狀就大變。所以舌位是聲樂訓練裡最重要的變量之一。
+      </p>
+      <p>
+        <span class="term">鼻咽通過軟齶控制開關。</span>軟齶抬起→聲音只走口腔,清亮;軟齶下塌→聲音走鼻腔,變成鼻音。
+      </p>
+      <p>
+        <span class="term">喉咽的擴張</span>就是聲樂老師說的「打開喉嚨」——靠的是降低喉位、放下舌根、抬起軟齶,把聲帶上方這段空間擴大,讓聲音有更多空間共鳴。
+      </p>
+
+      <div class="pullquote">
+        <span class="pullquote-zh">嘴裡要有空間。</span><br>
+        <em>Let there be room within.</em>
+      </div>
+
+      <p>
+        你沒法直接控制「共鳴」,你只能控制聲道的<em>形狀</em>。改變舌位、下巴、軟齶、喉位——共鳴就跟著變。
+      </p>
+    </div>
+  </section>
+
+  <div class="ornament spaced">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+  <!-- DIAGNOSIS -->
+  <section class="diagnosis">
+    <div class="chapter-head">
+      <div class="chapter-num">DIAGNOSIS</div>
+      <h2 class="chapter-title-zh">四種常見錯誤</h2>
+      <div class="chapter-title-en">Common Faults &nbsp;·&nbsp; 從結構看問題</div>
+      <div class="chapter-rule"></div>
+    </div>
+
+    <div class="diagnosis-grid">
+
+      <div class="diagnosis-card">
+        <h3>喉音 · 擠壓音</h3>
+        <p class="symptom">tight · constricted</p>
+        <p>聲帶上方(喉咽)這一段被卡緊,舌根壓下來,喉位往上提——聲道入口堵了,人本能用喉部肌肉擠聲帶去補償。</p>
+        <p class="root"><strong>根源</strong>聲道沒打開 + 喉部代償</p>
+      </div>
+
+      <div class="diagnosis-card">
+        <h3>鼻 音</h3>
+        <p class="symptom">nasal · trapped</p>
+        <p>軟齶塌下來,聲音全跑鼻咽去了,口咽沒被使用。聲音悶在鼻子裡出不來,捏鼻子時音色明顯改變。</p>
+        <p class="root"><strong>根源</strong>軟齶下塌 + 口咽未開</p>
+      </div>
+
+      <div class="diagnosis-card">
+        <h3>氣音 · 虛聲</h3>
+        <p class="symptom">breathy · airy</p>
+        <p>聲帶閉合不充分(中間那張圖上兩條聲帶沒有靠攏)——氣漏掉了,聲音沒有核心,唱久了沒氣、容易疲勞。</p>
+        <p class="root"><strong>根源</strong>聲帶閉合不足</p>
+      </div>
+
+      <div class="diagnosis-card">
+        <h3>白聲 · 扁平</h3>
+        <p class="symptom">flat · thin</p>
+        <p>聲道整體沒有擴張,喉位偏高——聲道太短太窄,共振峰偏高,聲音單薄沒有厚度,像在說話而不是唱歌。</p>
+        <p class="root"><strong>根源</strong>聲道未擴張 + 喉位過高</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="ornament spaced">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+  <!-- CODA -->
+  <section class="coda">
+    <div class="chapter-head">
+      <div class="chapter-num">CODA</div>
+      <h2 class="chapter-title-zh">三句話帶團隊</h2>
+      <div class="chapter-title-en">Three Reminders &nbsp;·&nbsp; for the team</div>
+      <div class="chapter-rule"></div>
+      <p class="chapter-verse">
+        不必記住所有解剖名詞,<br>每個組員只要建立三個意識就夠了。
+      </p>
+    </div>
+
+    <ul class="coda-list">
+      <li data-num="I">力氣在小腹,不在喉嚨</li>
+      <li data-num="II">聲帶是被氣吹響的,不是被擠響的</li>
+      <li data-num="III">嘴裡要有空間</li>
+    </ul>
+
+    <p style="color: var(--cream-muted); font-size: 14px; line-height: 1.95; max-width: 540px; margin: 28px auto 0; font-style: italic; letter-spacing: 0.04em;">
+      這三句話覆蓋了氣、聲帶、共鳴三個層次,<br>對應的就是圖上的下、中、上三段。
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-mark">✦ Soli Deo Gloria ✦</div>
+    <div class="footer-stats">
+      EFCCA Worship Team Training · MMXXVI
+      <span class="footer-stats-cn">恩慈台福基督教會 · 敬拜團隊培訓 · 2026</span>
+    </div>
+    <a class="footer-back" href="training.html">← 返回主領培訓</a>
+  </footer>
+
+</div>
+</body>
+</html>

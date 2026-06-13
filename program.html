@@ -95,6 +95,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 14px 28px;
     margin-bottom: 36px;
     animation: fadeIn 0.8s ease-out;
   }
@@ -106,29 +108,38 @@
     color: var(--gold-dim);
     text-transform: uppercase;
     padding-left: 0.55em;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .top-nav-brand:hover { color: var(--gold); }
+
+  .top-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
   }
 
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+  .top-nav-links a {
     font-family: var(--serif-en);
     font-size: 11px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
+    color: var(--cream-muted);
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .top-nav-links a:hover { color: var(--gold-bright); }
+  .top-nav-links a.current {
     color: var(--gold);
-    transition: gap 0.3s;
+    border-bottom-color: var(--gold);
   }
 
-  .back-link:hover { gap: 16px; }
-
-  .back-link svg {
-    width: 16px;
-    height: 10px;
-    stroke: currentColor;
-    stroke-width: 1.2;
-    fill: none;
+  @media (max-width: 600px) {
+    .top-nav { gap: 8px 16px; }
+    .top-nav-links { gap: 14px; }
+    .top-nav-links a { font-size: 10px; letter-spacing: 0.22em; }
   }
 
   /* HERO */
@@ -597,11 +608,13 @@
 
   <!-- TOP NAV -->
   <div class="top-nav">
-    <div class="top-nav-brand">EFCCA · 敬拜之夜 2026</div>
-    <a class="back-link" href="index.html">
-      <svg viewBox="0 0 16 10"><path d="M15 5 L2 5 M6 1 L2 5 L6 9"/></svg>
-      返回 · Home
-    </a>
+    <a class="top-nav-brand" href="index.html">EFCCA · 敬拜之夜 2026</a>
+    <nav class="top-nav-links">
+      <a href="index.html">首頁</a>
+      <a href="program.html" class="current">程序</a>
+      <a href="songs.html">詩歌</a>
+      <a href="training.html">培訓</a>
+    </nav>
   </div>
 
   <!-- HERO -->
